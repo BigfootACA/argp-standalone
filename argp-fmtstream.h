@@ -145,6 +145,7 @@ extern ssize_t argp_fmtstream_printf (argp_fmtstream_t __fs,
 				      __const char *__fmt, ...)
      PRINTF_STYLE(2,3);
 
+#if __STDC_VERSION__ - 199900L < 1
 extern int __argp_fmtstream_putc (argp_fmtstream_t __fs, int __ch);
 extern int argp_fmtstream_putc (argp_fmtstream_t __fs, int __ch);
 
@@ -155,6 +156,7 @@ extern size_t __argp_fmtstream_write (argp_fmtstream_t __fs,
 				      __const char *__str, size_t __len);
 extern size_t argp_fmtstream_write (argp_fmtstream_t __fs,
 				    __const char *__str, size_t __len);
+#endif /* __STDC_VERSION__ - 199900L < 1 */
 
 /* Access macros for various bits of state.  */
 #define argp_fmtstream_lmargin(__fs) ((__fs)->lmargin)
@@ -164,6 +166,7 @@ extern size_t argp_fmtstream_write (argp_fmtstream_t __fs,
 #define __argp_fmtstream_rmargin argp_fmtstream_rmargin
 #define __argp_fmtstream_wmargin argp_fmtstream_wmargin
 
+#if __STDC_VERSION__ - 199900L < 1
 /* Set __FS's left margin to LMARGIN and return the old value.  */
 extern size_t argp_fmtstream_set_lmargin (argp_fmtstream_t __fs,
 					  size_t __lmargin);
@@ -185,6 +188,7 @@ extern size_t __argp_fmtstream_set_wmargin (argp_fmtstream_t __fs,
 /* Return the column number of the current output point in __FS.  */
 extern size_t argp_fmtstream_point (argp_fmtstream_t __fs);
 extern size_t __argp_fmtstream_point (argp_fmtstream_t __fs);
+#endif /* __STDC_VERSION__ - 199900L < 1 */
 
 /* Internal routines.  */
 extern void _argp_fmtstream_update (argp_fmtstream_t __fs);
