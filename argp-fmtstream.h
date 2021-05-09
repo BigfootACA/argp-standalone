@@ -212,7 +212,7 @@ extern int __argp_fmtstream_ensure (argp_fmtstream_t __fs, size_t __amount);
 #endif
 
 #ifndef ARGP_FS_EI
-#define ARGP_FS_EI extern inline
+#define ARGP_FS_EI static inline
 #endif
 
 ARGP_FS_EI size_t
