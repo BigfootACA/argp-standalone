@@ -1292,7 +1292,7 @@ __option_is_short (__const struct argp_option *__opt)
       int __key = __opt->key;
       /* FIXME: whether or not a particular key implies a short option
        * ought not to be locale dependent. */
-      return __key > 0 && isprint (__key);
+      return __key > 0 && __key <= UCHAR_MAX && isprint (__key);
     }
 }
 
